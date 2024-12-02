@@ -1,13 +1,5 @@
 <%= page_title(t('.title')) %>
 
-<% if @actor.errors.any? %>
-  <ul>
-    <% @actor.errors.full_messages.each do |msg| %>
-      <li><% msg %></li>
-    <% end %>
-  </ul>
-<% end %>
-
 <%= form_with(model: @actor) do |f| %>
   <div class="mb-6">
     <%= f.label :name, class: 'form-label' %>

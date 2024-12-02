@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :actor do
-    name { "MyString" }
-    date_of_birth { "2024-12-02" }
-    nationality { "MyString" }
+    name { "Harrison Ford" }
+    date_of_birth { "1942-07-13" }
+    nationality { "EUA" }
   end
 end

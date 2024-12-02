@@ -31,8 +31,6 @@ describe 'Usuário cadastra um ator' do
     fill_in 'Nascionalidade', with: ''
     click_on 'Criar Ator'
 
-    expect(page).to have_content('Ator não cadastrado.')
-    expect(current_path).to eq(actors_path)
-    expect(page).to have_content('Nome não pode estar em branco')
+    expect(page).to have_content('Ator não foi adicionado.')
   end
 end

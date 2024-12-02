@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_02_182903) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_02_193239) do
   create_table "actors", force: :cascade do |t|
     t.string "name"
     t.date "date_of_birth"
     t.string "nationality"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "movie_papers", force: :cascade do |t|
+    t.integer "movie_id", null: false
+    t.integer "actor_id", null: false
+    t.string "character_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actor_id"], name: "index_movie_papers_on_actor_id"
+    t.index ["movie_id"], name: "index_movie_papers_on_movie_id"
   end
 
   create_table "movie_theaters", force: :cascade do |t|
@@ -58,5 +68,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_182903) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "movie_papers", "actors"
+  add_foreign_key "movie_papers", "movies"
   add_foreign_key "rooms", "movie_theaters"
 end

@@ -15,7 +15,7 @@ class ActorsController < ApplicationController
       redirect_to( @actor, notice: t('.success'))
     else
       flash.now[:alert] = t('.failure')
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

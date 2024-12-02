@@ -9,4 +9,12 @@
     <dd class="text-lg font-semibold"><%= l(@actor.date_of_birth) %></dd>
   </div>
 </dl>
+<h2 class="text-4xl font-bold dark:text-white mb-3">Filmes</h2>
+<div class="mb-6 grid grid-cols-4 gap-4">
+  <%= link_to 'Adicionar Papel', new_actor_movie_paper_path(@actor.id), class: 'btn-confirm'%>
+  <% @actor.movie_papers.each do |movie_papers| %>
+    <p><strong>Nome do Personagem:</strong> <%= movie_papers.character_name %></p>
+    <p><strong>Título:</strong> <%= movie_papers.movie.title %></p>
+  <% end %>
+</div>
 

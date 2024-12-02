@@ -29,3 +29,9 @@ pt-BR:
     create:
       success: 'Ator cadastrado com sucesso.'
       failure: 'Ator não foi adicionado.'
+  movie_papers:
+    new:
+      title: 'Novo Papel'
+    create:
+      success: 'Papel cadastrado com sucesso.'
+      failure: 'Papel não foi adicionado.'
