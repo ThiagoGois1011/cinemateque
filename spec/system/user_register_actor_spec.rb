@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Usuário cadastra um ator' do
-  it 'sucess' do
+  it 'com sucesso' do
     user = FactoryBot.create(:user, email: 'joao@email.com')
 
     login_as user
@@ -13,7 +13,9 @@ describe 'Usuário cadastra um ator' do
     fill_in 'Nascionalidade', with: 'EUA'
     click_on 'Criar Ator'
 
-    expect(page).to have_content('Ator cadastrado com sucesso!')
-    expect(current_path).to blabla_path
+    expect(page).to have_content('Ator cadastrado com sucesso.')
+    expect(page).to have_content('Vin Diesel')
+    expect(page).to have_content('Nacionalidade: EUA', normalize_ws: true)
+    expect(page).to have_content('Data de Nascimento: 18/07/1967', normalize_ws: true)
   end
 end

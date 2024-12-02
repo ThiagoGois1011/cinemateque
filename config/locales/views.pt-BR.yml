@@ -22,5 +22,10 @@ pt-BR:
       success: 'Filme adicionado com sucesso.'
       failure: 'Filme não foi adicionado.'
   actors:
-    index:
+    new:
       title: 'Novo Ator'
+    index: 
+      title: 'Atores'
+    create:
+      success: 'Ator cadastrado com sucesso.'
+      failure: 'Ator não foi adicionado.'
