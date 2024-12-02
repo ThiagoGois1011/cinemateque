@@ -13,6 +13,9 @@ class ActorsController < ApplicationController
 
     if @actor.save
       redirect_to( @actor, notice: t('.success'))
+    else
+      flash.now[:alert] = t('.failure')
+      render :new
     end
   end
 
